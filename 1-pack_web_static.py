@@ -16,13 +16,14 @@ def do_pack():
     local("mkdir -p versions")
     if (os.path.isdir("web_static")):
         my_date = datetime.now()
-        my_tgz = local("tar -czvf versions/web_static_{}{}{}{}{}{}.tgz web_static".format(
-            my_date.year,
-            my_date.month,
-            my_date.day,
-            my_date.hour,
-            my_date.minute,
-            my_date.second))
+        my_tgz = local(
+            "tar -czvf versions/web_static_{}{}{}{}{}{}.tgz web_static".format(
+                my_date.year,
+                my_date.month,
+                my_date.day,
+                my_date.hour,
+                my_date.minute,
+                my_date.second))
         return my_tgz
     else:
         return None
