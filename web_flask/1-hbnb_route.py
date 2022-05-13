@@ -15,5 +15,10 @@ def hello_route():
     """displays "Hello HBNB!""""
     return "Hello HBNB!"
 
+@app.route('/hbnb', strict_slashes=False)
+def hbnb_route():
+    """displays "HBNB""""
+    return "HBNB"
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
